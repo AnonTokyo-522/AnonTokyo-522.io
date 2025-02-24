@@ -3,7 +3,7 @@
 const imageContainer = document.querySelector('.image-switch-container');
 const image1 = document.getElementById('image1');
 const image2 = document.getElementById('image2');
-const typingContainer = document.querySelector('.typing-container');  // 选择打字机容器
+const typingContainer = document.querySelector('.typing-container');  
 const bubble = document.querySelector('.bubble');
 const bubbleTextElements = document.querySelectorAll('.bubble-text');
 
@@ -12,8 +12,8 @@ let currentImage = image1;
 image1.classList.add('visible');
 
 // 初始颜色状态
-let isRed = true;  // 用于控制打字机文字颜色
-let isGreen = true;  // 用于控制气泡框颜色
+let isRed = true;  
+let isGreen = true;  
 
 // 定义图片切换函数
 const switchImages = () => {
@@ -111,12 +111,17 @@ function startTypingEffect() {
 
 startTypingEffect();
 
+
+
 window.onload = function () {
     // 隐藏加载动画
     const loadingElement = document.getElementById('loading');
     loadingElement.style.display = 'none';  // 页面加载完后隐藏加载动画
-    
-    // 气泡框文字切换
+
+    // 获取所有气泡文字元素
+    const bubbleTextElements = document.querySelectorAll('.bubble-text');
+
+    // 气泡框文字内容
     const texts = [
         "多么诡异又神奇的世界。我得用心维护，让它一直保持这样。",
         "还只是个玩偶的时候，我就很想上战场了。现在机会来了，我唯一的机会。",
@@ -124,20 +129,19 @@ window.onload = function () {
     ];
 
     let currentIndex = 0; // 当前显示的文字的索引
-    const bubbleTextElements = document.querySelectorAll('.bubble-text');
     let textInterval;
 
     // 隐藏所有文字
     function hideAllTexts() {
-        bubbleTextElements.forEach(element => {
-            element.style.opacity = 0;
+        bubbleTextElements.forEach(element => {a
+            element.classList.remove('active'); 
         });
     }
 
     // 显示当前文字
     function showText(index) {
         hideAllTexts();
-        bubbleTextElements[index].style.opacity = 1;
+        bubbleTextElements[index].classList.add('active'); 
     }
 
     // 启动文字切换功能
@@ -145,7 +149,7 @@ window.onload = function () {
         textInterval = setInterval(() => {
             showText(currentIndex);
             currentIndex = (currentIndex + 1) % texts.length; // 循环切换
-        }, 5000); // 每3秒切换一次
+        }, 5000); // 每5秒切换一次
     }
 
     // 初始化
@@ -153,11 +157,9 @@ window.onload = function () {
         element.textContent = texts[index];
     });
 
+    showText(currentIndex); // 显示第一个文字
     startTextCycle(); // 开始文字切换
 };
-
-
-
 
 
 
