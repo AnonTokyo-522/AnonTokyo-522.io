@@ -119,24 +119,23 @@
 
 /* 手机端响应式调整 */
 @media (max-width: 768px) {
-    /* 隐藏右侧导航栏中的头像和链接 */
+   
     .right-nav img,
     .right-nav a {
         display: none;
     }
 
-    /* 调整导航栏的样式，使其简化 */
+    
     .navigation-bar ul {
        
         text-align: center;
     }
 
     .navigation-bar li {
-        margin: 0px 20px; /* 增加间距 */
+        margin: 0px 20px; 
     }
 }
 
-/* 小屏设备（如小手机）响应式调整 */
 @media (max-width: 480px) {
     /* 进一步调整右侧导航栏 */
     .right-nav {
