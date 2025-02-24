@@ -1,0 +1,62 @@
+/* 主页主要部分一 */
+.main-body1{
+    display: flex;
+    justify-content: space-between; /* 左右内容和中间内容分开 */
+    align-items: flex-start; /* 垂直方向顶部对齐 */
+    height: 100%; /* 保证main-content占满整个页面高度 */
+    padding: 20px;
+}
+
+/* 左侧部分 */
+.left-side {
+    
+    flex: 1; /* 让左侧占据剩余空间 */
+    padding: 40px;
+}
+
+/* 右侧部分 */
+.right-side {
+    
+    flex: 1; /* 右侧同样占据剩余空间 */
+    padding: 60px;
+}
+
+/* 中间部分 */
+.center {
+    flex: 1.5; /* 中间部分占据更多空间 */
+    text-align: left; /* 标题和段落靠左对齐 */
+    padding: 20px;
+    padding-top: 20px;
+    background-color: bisque;
+    border-radius: 35px; /* 圆角 */
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 添加阴影 */
+}
+
+.main-body2{
+    display: flex;
+    justify-content: space-between; /* 左右内容和中间内容分开 */
+    align-items: flex-start; /* 垂直方向顶部对齐 */
+    height: 100%; /* 保证main-content占满整个页面高度 */
+    padding: 20px;
+}
+
+/* 标题样式 */
+.center h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* 段落样式 */
+.center p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* 两侧图片样式 */
+.besideIMG{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

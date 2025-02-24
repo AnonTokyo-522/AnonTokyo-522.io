@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- 封面图样式 -->
+    <link rel="stylesheet" href="./cover-img.css">
+    <!-- 导航栏样式 -->
+    <link rel="stylesheet" href="./navigationPart.css">
+    <!-- 主体内容样式 -->
+    <link rel="stylesheet" href="./mainBody.css">
+</head>
+
+<body>
+
+ <!-- 封面大图 -->
+ <div class="cover-image" onclick="enterHome()">
+    <img src="./image/coverPage.gif" alt="封面图">
+    <div class="click-text">Click AnyWhere</div>
+    <div class="welcome-text">Welcom To My Blog</div>
+    <div class="arrow-down"></div>
+</div>
+
+<!-- 导航内容 -->
+<nav class="navigation-bar">
+    <!-- 左侧导航栏 -->
+    <ul>
+        <li><a href="#home">主页</a></li>
+        <li><a href="#blog">博客日记</a></li>
+        <li><a href="#about">关于我</a></li>
+    </ul>
+</nav>
+<!-- 右侧头像 -->
+<div class="right-nav">
+    <a href="#profile">
+        <a href="https://space.bilibili.com/358565398?spm_id_from=333.1007.0.0" target="_blank">
+            <i class="fab fa-bilibili"></i> <!-- B站 图标 -->
+        </a>
+        <a href="https://github.com/AnonTokyo-522" target="_blank">
+            <i class="fab fa-github"></i> <!-- GitHub 图标 -->
+        </a>
+        <a href="https://leetcode.cn/u/quirky-villanivbb/" target="_blank">
+            <i class="fas fa-code"></i> <!-- LeetCode 图标 -->
+        </a>
+    </a>
+    <img src="./image/GwenProfile.png" alt="头像" class="avater">
+</div>
+
+<!-- 导航栏初始位置背景 -->
+<div class="nav-background">
+    <img src="./image/navBackground.gif" alt="导航栏背景">
+</div>
+
+<!-- 具有控制背景的 moveNav -->
+<div id="moveNav" class="moveNav">
+    
+</div>
+    
+ <!-- 主体内容一 -->
+ <main class="main-body1">
+    <!-- 左侧部分 -->
+    <div class="left-side">
+       <img src="./image/LeftRobin1.jpg" alt="左侧图片1" class="besideIMG" >
+    </div>
+
+
+   <!-- 中间部分 -->
+   <div class="center">
+       <div class="slef-introduction">
+           <h2 class="paragraphTitle">I'm</h2>
+           <p>你好，我是Gwen，欢迎来到我的小小博客！我目前在南开大学软件学院就读，正在攻读软件工程专业的学位。虽然我还是大二的学生，但编程和算法已经是我生活的一部分。每天都会抽时间挑战新的编程题目，享受解决问题的成就感。</p>               
+           <p>在学习之余，我也有很多兴趣爱好。比如，我热爱玩游戏、骑行、散步、撸猫和听音乐等等。我打算在我的博客这里，分享我的日常、爱好以及我对编程和算法的理解。</p>
+           <p>希望你能喜欢我的博客，也欢迎各位来和我交朋友！</p>
+       </div>
+   </div>
+
+   <!-- 右侧部分 -->
+    <div class="right-side">
+       <img src="./image/RightRobin1.jpg" alt="右侧图片1" class="besideIMG">
+    </div>
+</main>
+
+<!-- 主体内容二 -->
+<main class="main-body2">
+    <!-- 左侧部分 -->
+    <div class="left-side">
+       <img src="./image/leftGwen2.jpg" alt="左侧图片2" class="besideIMG" >
+    </div>
+
+
+   <!-- 中间技术栈 -->
+   <div class="">
+       <h1>你好你好！！！！！！！！！</h1>
+   </div>
+
+   <!-- 右侧部分 -->
+    <div class="right-side">
+       <img src="./image/rightGwen2.jpg" alt="右侧图片2" class="besideIMG">
+    </div>
+</main>
+   
+
+    <script src="./javascript.js"></script>
+</body>
+</html>

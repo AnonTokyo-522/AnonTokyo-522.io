@@ -1,0 +1,93 @@
+.cover-image{
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* 确保大图位于最上方 */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 1s ease-out;
+}
+
+.cover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持图片的纵横比，裁切图片 */
+}
+/* 点击任意位置 */
+.click-text{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 精确居中 */
+    font-size: 2rem; 
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    cursor: pointer; 
+    transition: opacity 0.3s ease;
+}
+/* 欢迎 */
+.welcome-text{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    color: rgb(137, 234, 237);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+
+    transition: opacity 0.3s ease;
+}
+
+/* 向下箭头的样式 */
+.arrow-down {
+    position: absolute;
+    bottom: 20px; /* 距离底部20px */
+    width: 50px;
+    height: 50px;
+    border: solid 3px black;
+    border-width: 0 3px 3px 0;
+    transform: rotate(0deg); /* 旋转箭头 */
+    animation: bounce 1s infinite; /* 箭头做上下跳动动画 */
+}
+
+/* 向下箭头动画效果 */
+@keyframes bounce {
+    0% { transform: translateY(0) rotate(45deg); }
+    50% { transform: translateY(-10px) rotate(45deg); }
+    100% { transform: translateY(0) rotate(45deg); }
+}
+
+/* 点击后封面图从下往上消失的效果 */
+.cover-image.clicked {
+    animation: slideUp 1s forwards; /* 让封面图从下往上滑动消失 */
+}
+
+/* 从下往上滑动消失的动画 */
+@keyframes slideUp {
+    0% {
+        transform: translateY(0); /* 初始位置 */
+    }
+    100% {
+        transform: translateY(-100%); /* 向上滑动并消失 */
+    }
+}
+
+/* 主页内容，初始隐藏 */
+.main-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* 主页内容显示后的样式 */
+.main-content.show {
+    display: block;
+    opacity: 1;
+}
