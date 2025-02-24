@@ -1,15 +1,15 @@
 /* 设置背景图并让它随着页面滚动延伸 */
 .life-share-background {
-    background-image: url("../image/lifeShareBackground.jpg");  /* 背景图片 */
-    background-size: cover;  /* 让背景图充满整个页面 */
-    background-position: center;  /* 背景图片居中 */
-    background-attachment: fixed;  /* 背景固定在视口，不随页面滚动 */
+    background-image: url("../image/lifeShareBackground.jpg");  
+    background-size: cover;  
+    background-position: center;  
+    background-attachment: fixed;  
     width: 100%;
-    height: 100vh;  /* 初始高度为屏幕的高度 */
-    position: fixed;  /* 确保背景固定 */
+    height: 100vh;  
+    position: fixed;  
     top: 0;
     left: 0;
-    z-index: -1;  /* 确保背景图在内容区域之下 */
+    z-index: -1;  
 }
 
 /* 设置容器的布局 */
@@ -18,33 +18,38 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px;
-    background-color: transparent; /* 容器背景透明 */
+    background-color: transparent;
+    max-width: 100%; 
+    box-sizing: border-box; 
 }
 
 /* 文章部分的样式 */
 .article-content {
     flex: 1;
-    margin-right: 900px; /* 文章和图片之间的间隙 */
-    background-color: white; /* 文章部分的白色背景 */
+    margin-right: 100px; 
+    background-color: white; 
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 /* 图片部分的样式 */
 .image-gallery {
-    flex: 0 0 300px; /* 固定图片部分的宽度 */
+    flex: 0 0 300px; 
     display: flex;
     flex-direction: column;
     gap: 10px; /* 图片之间的间距 */
-    background-color: transparent; /* 图片部分背景透明 */
+    background-color: transparent; 
 }
 
 .image-card img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    object-fit: cover;  /* 保证图片保持比例 */
 }
+
 
 /* 文章标题和日期的样式 */
 .article-title {
@@ -65,21 +70,30 @@
     color: #333;
 }
 
-/* 响应式布局 */
 @media (max-width: 768px) {
-    .share-container {
-        flex-direction: column;  /* 切换为垂直布局 */
-        padding: 80px 20px;  /* 调整内边距 */
+    .share-detail-container {
+        display: flex;
+        flex-direction: column;  
+        padding: 20px;  
+        gap: 20px; 
     }
 
+   
     .article-content,
     .image-gallery {
-        max-width: 100%;
-        width: 100%;
+        width: 100%;  
+        margin-right: 0;  
     }
 
+    
     .image-gallery {
-        position: static;  /* 让图片位置恢复正常 */
-        margin-top: 40px;  /* 添加间隙 */
+        margin-top: 20px;  
+    }
+}
+
+@media (max-width: 768px) {
+    .life-share-background {
+        height: auto; 
+        background-attachment: scroll;  
     }
 }
