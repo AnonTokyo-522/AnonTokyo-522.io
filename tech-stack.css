@@ -134,14 +134,14 @@
     /* 调整卡片容器，使其适应较小屏幕 */
     .tech-card-container,
     .Learning-card-container {
-        gap: 10px; /* 减小卡片之间的间距 */
-        justify-content: flex-start; /* 居左对齐 */
+        gap: 10px; 
+        justify-content: flex-start; 
     }
 
-    /* 调整卡片的宽度，使其在手机屏幕下适配 */
+  
     .tech-card,
     .Learning-card {
-        width: 150px; /* 调整卡片宽度 */
+        width: 150px; 
     }
 }
 
