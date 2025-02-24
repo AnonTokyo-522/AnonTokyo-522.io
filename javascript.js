@@ -1,4 +1,3 @@
-
 // 获取元素
 const imageContainer = document.querySelector('.image-switch-container');
 const image1 = document.getElementById('image1');
@@ -110,6 +109,7 @@ function startTypingEffect() {
 }
 
 startTypingEffect();
+
 
 
 
