@@ -1,10 +1,10 @@
 /* 主页主要部分一 */
 .main-body1 {
     display: flex;
-    flex-wrap: wrap; /* 允许换行 */
-    justify-content: space-between; /* 左右内容和中间内容分开 */
-    align-items: flex-start; /* 垂直方向顶部对齐 */
-    height: 100%; /* 保证main-content占满整个页面高度 */
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    height: 100%; 
     padding: 20px;
 }
 
@@ -41,7 +41,7 @@
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    animation: spin 1s linear infinite;
+    animation: spin 1 linear infinite;
 }
 
 @keyframes spin {
