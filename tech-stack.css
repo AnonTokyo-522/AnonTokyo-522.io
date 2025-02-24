@@ -31,23 +31,6 @@
     animation: slideLeft 2s ease-in-out infinite alternate;
 }
 
-/* 通过不同的 animation-delay 为每个卡片增加参差效果 */
-.Learning-card:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.Learning-card:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-.Learning-card:nth-child(3) {
-    animation-delay: 1s;
-}
-
-.Learning-card:nth-child(4) {
-    animation-delay: 1.5s;
-}
-
 /* 当鼠标悬停时，展示详细内容 */
 .tech-card:hover {
     transform: translateY(-10px);
@@ -109,8 +92,8 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    transition: transform 0.3 ease-in-out;
-    animation: slideLeft 2 ease-in-out infinite alternate;
+    transition: transform 0.3s ease-in-out;
+    animation: slideLeft 2s ease-in-out infinite alternate;
 }
 
 .Learning-title {
@@ -119,6 +102,52 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
 }
+/* 错开卡片的动画 */
+.Learning-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.Learning-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.Learning-card:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.Learning-card:nth-child(4) {
+    animation-delay: 1.5;
+}
+
+.tech-card:nth-child(1) {
+    animation-delay: 0.25;
+}
+
+.tech-card:nth-child(2) {
+    animation-delay: 0.75;
+}
+
+.tech-card:nth-child(3) {
+    animation-delay: 1.25;
+}
+
+.tech-card:nth-child(4) {
+    animation-delay: 1.75;
+}
+
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);  /* 从原始位置开始 */
+    }
+    50% {
+        transform: translateX(-20px);  /* 左移 */
+    }
+    100% {
+        transform: translateX(0);  /* 回到原始位置 */
+    }
+}
+
 
 /* 矩阵背景动画 */
 @keyframes matrix {
@@ -129,26 +158,23 @@
     100% { background: white; }
 }
 
-/* 手机端响应式调整 */
 @media (max-width: 768px) {
-    /* 调整卡片容器，使其适应较小屏幕 */
     .tech-card-container,
     .Learning-card-container {
         gap: 10px; 
         justify-content: flex-start; 
     }
 
-  
     .tech-card,
     .Learning-card {
         width: 150px; 
+        animation: slideLeft 2 ease-in-out infinite alternate; /* 保持移动效果 */
     }
 }
 
-/* 小屏设备（如小手机）响应式调整 */
 @media (max-width: 480px) {
     .tech-card,
     .Learning-card {
-        width: 130px; /* 更小的卡片宽度 */
+        width: 130px;  /* 更小的卡片宽度 */
     }
 }
