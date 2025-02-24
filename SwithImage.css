@@ -14,7 +14,7 @@
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1 ease-in-out;
     z-index: 0; /* 初始层级 */
 }
 
@@ -61,31 +61,35 @@ body {
     z-index: 100;
 }
 
+
 /* 气泡样式 */
 .bubble {
-
     position: relative;
-    width: 90%; /* 设置为100%填满容器 */
-    height: 90%; /* 设置为100%填满容器 */
+    width: 90%; 
+    height: 90%; 
     background-color: #c9ef81;
-    border-radius: 50%;  /* 这里的50%是为了形成圆形 */
+    border-radius: 50%;  
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: bubbleMovement 6s linear infinite;
+    animation: bubbleMovement 6 linear infinite;
 }
 
 /* 气泡框内部文字 */
 .bubble-text {
-    opacity: 50%;
-    left: 10%;
     position: absolute;
     color: black;
     font-size: 14px;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    opacity: 1; /* 初始状态为透明 */
+    transition: opacity 1 ease-in-out, transform 1 ease-in-out; 
+    transform: translateY(20px); 
 }
 
+/* 文字显示时的动画效果 */
+.bubble-text.active {
+    opacity: 1; /* 完全显示 */
+    transform: translateY(0); /* 回到原始位置 */
+}
 
 /* 气泡框绕小圆圈运动的动画 */
 @keyframes bubbleMovement {
@@ -108,5 +112,5 @@ body {
 
 /* 过渡效果 */
 #typing-text, .bubble, .bubble-text {
-    transition: color 0.5s ease, background-color 0.5s ease;
+    transition: color 0.5 ease, background-color 0.5 ease;
 }
