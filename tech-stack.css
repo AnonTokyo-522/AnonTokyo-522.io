@@ -1,0 +1,152 @@
+/* 技术栈容器 */
+.tech-stack {
+    position: relative;
+    z-index: 1;
+    animation: matrix 5s infinite linear;
+    background: #010101;
+    padding: 40px 0;
+    color: white;
+}
+
+/* 卡片容器样式 */
+.tech-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+/* 单个卡片样式 */
+.tech-card {
+    background-color: rgba(255, 255, 255, 0.7); /* 半透明白色背景 */
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    animation: slideLeft 2s ease-in-out infinite alternate;
+}
+
+/* 卡片左右滑动的动画 */
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(20px);
+    }
+}
+
+/* 单个卡片样式 */
+.tech-card, .Learning-card {
+    background-color: rgba(255, 255, 255, 0.7); /* 半透明白色背景 */
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    animation: slideLeft 2s ease-in-out infinite alternate;
+}
+
+/* 通过不同的 animation-delay 为每个卡片增加参差效果 */
+.Learning-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.Learning-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.Learning-card:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.Learning-card:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+/* 当鼠标悬停时，展示详细内容 */
+.tech-card:hover {
+    transform: translateY(-10px);  /* 提升卡片，产生悬浮效果 */
+}
+
+/* 卡片标题 */
+.tech-card h2 {
+    font-size: 1.5rem;
+    margin-top: 20%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black; /* 确保卡片标题颜色为黑色 */
+}
+
+.tech-card h1 {
+    font-size: 2.5rem;
+    margin-top: 20%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black; /* 确保卡片标题颜色为黑色 */
+}
+
+/* 技术栈描述，默认不显示 */
+.tech-description {
+    opacity: 0;  /* 初始状态下隐藏文字 */
+    visibility: hidden;  /* 文字不可见 */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    color: black; /* 确保描述文字为黑色 */
+}
+
+/* 鼠标悬停时，显示文字并隐藏标题 */
+.tech-card:hover h1, .tech-card:hover h2 {
+    opacity: 0;  /* 标题消失 */
+}
+
+.tech-card:hover .tech-description {
+    opacity: 1;  /* 文字可见 */
+    visibility: visible;  /* 文字可见 */
+}
+
+/* 正在学习栈部分 */
+.Learning-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+/* 学习卡片样式，和技术栈卡片相同，增加滑动动画 */
+.Learning-card {
+    background-color: rgba(255, 255, 255, 0.7); /* 半透明白色背景 */
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    animation: slideLeft 2s ease-in-out infinite alternate; /* 增加左右滑动动画 */
+}
+
+.Learning-title {
+    font-size: 2.5rem;
+    margin-top: 20%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black; /* 确保学习标题颜色为黑色 */
+}
+
+/* 矩阵背景动画 */
+@keyframes matrix {
+    0% { background: white; }
+    25% { background: #6ee76e; }
+    50% { background: rgb(128, 128, 247); }
+    75% { background: rgb(248, 181, 192); }
+    100% { background: white; }
+}

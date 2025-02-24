@@ -1,0 +1,108 @@
+/* 项目部分 */
+.projects {
+    padding: 50px 0;
+    background-color: #f8f8f8; /* 背景为浅灰色 */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; 
+}
+/* 背景 */
+.projects::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 128, 255, 0.4) 20%, rgba(255, 255, 255, 0.6) 60%, rgba(255, 255, 255, 0.2) 100%);
+    pointer-events: none;
+    z-index: -1;
+    transform: rotate(-45deg);
+    opacity: 0.7;
+}
+
+.projects h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* 项目卡片容器 */
+.project-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 单个项目卡片 */
+.project-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* 卡片图片 */
+.project-card img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+/* 项目信息 */
+.project-info {
+    padding: 10px;
+}
+
+
+/* 当悬停时展示更多信息 */
+.project-card:hover .more-info {
+    opacity: 1;
+}
+
+/* 鼠标悬停时的效果 */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* 更多信息链接容器 */
+.more-info {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 链接样式 */
+.link {
+    color: #0073e6; /* 链接的蓝色 */
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+/* 鼠标悬停时的链接效果 */
+.link:hover {
+    color: #005bb5; /* 悬停时更深的蓝色 */
+}
+
+/* 显示链接 */
+.project-card:hover .more-info {
+    opacity: 1;
+}

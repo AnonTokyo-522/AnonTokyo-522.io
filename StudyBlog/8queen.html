@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八皇后</title>
+    <link rel="stylesheet" href="../navigationPart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Blog.css">
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- 左侧导航栏 -->
+    <nav class="navigation-bar">
+        <ul>
+            <li><a href="../index.html">主页</a></li>
+            <li><a href="../life-share.html">生活分享</a></li>
+            <li><a href="../study-blog.html">学习博客</a></li>
+        </ul>
+    </nav>
+
+    <!-- 右侧头像 -->
+    <div class="right-nav">
+        <a href="https://space.bilibili.com/358565398?spm_id_from=333.1007.0.0" target="_blank">
+            <i class="fab fa-bilibili"></i> <!-- B站 图标 -->
+        </a>
+        <a href="https://github.com/AnonTokyo-522" target="_blank">
+            <i class="fab fa-github"></i> <!-- GitHub 图标 -->
+        </a>
+        <a href="https://leetcode.cn/u/quirky-villanivbb/" target="_blank">
+            <i class="fas fa-code"></i> <!-- LeetCode 图标 -->
+        </a>
+        <img src="../image/GwenProfile.png" alt="头像" class="avater">
+    </div>
+    
+    <div class="nav-background">
+        <img src="../image/navBackground.webp" alt="导航栏背景">
+    </div>
+
+    <!-- 具有控制背景的 moveNav -->
+    <div id="moveNav" class="moveNav">
+    </div>
+
+    <!-- 背景大图 -->
+    <div class="life-share-background">
+    </div>
+
+    <section class="blog-container">
+        <!-- 左侧图片区域 -->
+        <div class="image-container">
+            <img src="./8queen.png" alt="博客图片">
+        </div>
+    
+        <!-- 右侧白板区域 -->
+        <div class="content-container">
+            <h1 class="content-title">N皇后--位运算解法</h1>
+            <div class="content-body">
+                <h2>位运算</h2>
+                <p><strong>首先要熟悉位运算，定义整数row，cols，diag1和diag2来表示行，列、对角线的占用情况。cols的情况很简单，0000,0101最终到1111表示每一列是否有皇后占用。</strong></p>
+                <p>关于对角线，就拿n=4的情况来举例说明，对角线实际上是有7条的，但对于我们遍历的每一行，只有4个格子 也就是对应了4条对角线而已。所以我们也只需计算4位数字，后面的左移 右移操作也跟这个有关。</p>
+                <p>先展示代码如下：</p>
+                <pre><code class="cpp">
+class NQueens {
+public:
+    vector<vector<string>> solveNQueens(int n) {
+        vector<vector<string>> result;
+        vector<int> board(n, 0);  // 用来表示每行放在哪一列
+        solve(result, board, 0, 0, 0, 0, n);
+        return result;
+    }
+
+private:
+    void solve(vector<vector<string>>& result, vector<int>& board, int row, int cols, int diag1, int diag2, int n) {
+        if (row == n) {
+            // 找到一个解，构建棋盘并添加到结果
+            vector<string> boardStr(n, string(n, '.'));
+            for (int i = 0; i < n; i++) {
+                boardStr[i][board[i]] = 'Q';
+            }
+            result.push_back(boardStr);
+            return;
+        }
+
+        int availablePositions = ~(cols | diag1 | diag2) & ((1 << n) - 1); // 可用位置
+        while (availablePositions) {
+            int pos = availablePositions & -availablePositions;  // 获取最低位的1
+            availablePositions &= availablePositions - 1;  // 移除最低位的1
+            int col = __builtin_ctz(pos);  // 获取最低位1的位置（即当前列）
+            board[row] = col;
+            solve(result, board, row + 1, cols | pos, (diag1 | pos) << 1, (diag2 | pos) >> 1, n);
+        }
+    }
+};
+                </code></pre>
+                
+                <h3>位运算疑惑解答</h3>
+                <ol>
+                    <li><strong>availablePositions</strong>: 该部分表示当前行可以操作的列位置。通过将cols、diag1、diag2三者合并，并取反，我们能够识别出可以使用的位置。接着，& ((1 << n) - 1)部分是进行掩码操作，将其限制为n位。</li>
+                    <li><strong>while循环</strong>: 该循环用于处理所有可以操作的位置，直到availablePositions变为0000。我们从右往左处理每一个可操作的位置。</li>
+                    <li><strong>pos的获取</strong>: 通过availablePositions & -availablePositions，我们能够获取最低位的1，这样可以从最低位开始进行递归回溯。</li>
+                    <li><strong>移除最低位的1</strong>: 一旦处理完最低位的1后，我们通过availablePositions &= availablePositions - 1来去除它，继续处理下一个位置。</li>
+                    <li><strong>col的计算</strong>: 使用__builtin_ctz(pos)来获取最低位1的位置，将其转化为十进制数。</li>
+                    <li><strong>递归调用</strong>: 在递归中，cols、diag1、diag2会根据放置皇后的列和对角线进行更新。</li>
+                </ol>
+                <p><strong>补充说明:</strong> 当n非常大时，位运算的掩码能够显著提升计算效率，避免进行不必要的大整数运算。</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="../navigationJS.js"></script>
+</body>
+</html>

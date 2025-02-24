@@ -1,0 +1,88 @@
+/* 设置背景图并让它随着页面滚动延伸 */
+.life-share-background {
+    background-image: url("./image/lifeShareBackground.jpg");  /* 背景图片 */
+    background-size: cover;  /* 让背景图充满整个页面 */
+    background-position: center;  /* 背景图片居中 */
+    background-attachment: fixed;  /* 背景固定在视口，不随页面滚动 */
+    width: 100%;
+    height: 100vh;  /* 初始高度为屏幕的高度 */
+    position: relative;
+}
+
+/* 设置生活分享卡片容器 */
+.share-container {
+    position: absolute; /* 让卡片容器绝对定位于页面顶部 */
+    top: 10%;  /* 使卡片容器垂直居中 */
+    left: 0;
+    right: 0;
+    z-index: 1;  /* 保证卡片内容在背景图之上 */
+    padding: 20px;
+    text-align: center;
+}
+
+/* 生活分享卡片容器，保持卡片对齐 */
+.share-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* 从左侧开始排列 */
+    gap: 100px;
+    padding: 20px;
+}
+
+/* 生活分享卡片 */
+.share-card {
+    width: 300px;  
+    height: 300px;
+    padding: 20px;
+    background-color: white;  /* 背景设置为白色 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    color: black;  /* 文字颜色为黑色，确保在白色背景上清晰可见 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 居中对齐 */
+}
+
+/* 卡片上方的图片 */
+.card-image {
+    width: 100%;
+    height: 200px;  /* 控制图片的高度 */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 保证图片保持比例且填充区域 */
+}
+
+/* 小标题样式 */
+.card-title {
+    font-size: 1.25rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* 卡片悬停效果 */
+.share-card:hover {
+    transform: translateY(-10px);  /* 悬停时的浮动效果 */
+}
+
+/* 卡片文本和按钮 */
+.share-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    color: #1abc9c;
+}

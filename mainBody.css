@@ -1,0 +1,54 @@
+/* 主页主要部分一 */
+.main-body1 {
+    display: flex;
+    flex-wrap: wrap; /* 允许换行 */
+    justify-content: space-between; /* 左右内容和中间内容分开 */
+    align-items: flex-start; /* 垂直方向顶部对齐 */
+    height: 100%; /* 保证main-content占满整个页面高度 */
+    padding: 20px;
+}
+
+/* 标题样式 */
+.center h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* 段落样式 */
+.center p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* 背景覆盖整个页面 */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* 确保覆盖在其他内容之上 */
+}
+
+/* 旋转的加载图标 */
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #333;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

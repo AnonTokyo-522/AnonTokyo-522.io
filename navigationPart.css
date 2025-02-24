@@ -1,0 +1,160 @@
+/* 导航栏 */
+.navigation-bar {
+    position: fixed; /* 确保导航栏相对于页面其他内容定位 */
+    width: 100%;
+    height: 210x;
+    top: 15px;
+    justify-content: left;
+    align-items: center;
+    z-index: 950; /* 确保导航栏位于其他内容之上 */
+}
+
+/* 鼠标移动后的导航栏 */
+.moveNav {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0px;
+    z-index: 900;
+    opacity: 0; /* 初始透明 */
+    background-color: rgba(255, 255, 255, 0); /* 初始背景透明 */
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* 滚动后背景变为白色 */
+.moveNav.scrolled {
+    opacity: 1; /* 滚动时显示 */
+    background-color: white; /* 背景变为白色 */
+}
+
+/* 导航栏的列表 */
+.navigation-bar ul {
+    list-style: none; /* 去掉默认的列表样式 */
+    display: flex; /* 水平排列导航链接 */
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-bar li {
+    margin: 0 20px; /* 每个导航链接之间的间距 */
+}
+
+/* 导航栏的链接文字颜色 */
+.navigation-bar a {
+    color: white; /* 初始为白色 */
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: color 0.3s; /* 添加颜色过渡效果 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 滚动后，导航栏文字颜色变为黑色 */
+.scroll-active .navigation-bar a {
+    color: black !important; /* 滚动后为黑色 */
+}
+
+.navigation-bar a:hover {
+    color: #ff9900; /* 悬停时文字颜色变化 */
+}
+
+/* 右侧导航栏 */
+.right-nav {
+    position: fixed;
+    right: 20px;
+    top: 15px;
+    margin-right: 20px;
+    display: flex;
+    gap: 20px; /* 图标之间的间距 */
+    z-index: 950;
+}
+
+.right-nav a {
+    font-size: 30px; /* 图标大小 */
+    color: white; /* 图标颜色 */
+    transition: color 0.3s ease;
+}
+
+.right-nav a:hover {
+    color: #ff9900; /* 悬停时改变颜色 */
+}
+
+.right-nav i {
+    color: white; /* 初始为白色 */
+    font-size: 1.5rem;
+    transition: color 0.3s ease; /* 平滑过渡颜色变化 */
+}
+
+/* 滚动后，右侧导航栏的链接和图标颜色变为黑色 */
+.scroll-active .right-nav a,
+.scroll-active .right-nav i {
+    color: black !important; /* 滚动后变为黑色，添加 !important 以确保不覆盖悬停状态 */
+}
+
+/* 右侧头像 */
+.right-nav img {
+    top: 10px;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+/* 固定在页面顶部的背景 */
+.nav-background {
+    position: flex  ;    /* 固定在页面顶部 */
+    top: 0;             /* 距离顶部为0 */
+    left: 0;            /* 距离左边为0 */
+    width: 100%;        /* 宽度100% */
+    height: 80px;      /* 高度可以根据需要调整 */
+    z-index: 900;        /* 确保背景在内容下层 */
+}
+
+.nav-background img {
+    width: 100%;        /* 使背景图片充满整个容器 */
+    height: 100%;       /* 保持图片的高度和容器一致 */
+    object-fit: cover;  /* 图片裁剪填充容器 */
+}
+
+
+/* 手机端响应式调整 */
+@media (max-width: 768px) {
+    /* 隐藏所有左上角导航内容（主页、博客日记、关于我） */
+    .navigation-bar ul {
+        display: none; /* 隐藏导航栏左侧内容 */
+    }
+
+    .right-nav img { 
+        display: none; /* 隐藏头像 */
+    }
+
+    /* 隐藏左侧导航栏的所有链接 */
+    .navigation-bar ul li {
+        display: none;
+    }
+
+    /* 右侧导航栏只保留 B站 和 GitHub 链接 */
+    .right-nav {
+        top: 10px; /* 微调右侧导航栏的位置 */
+        right: 10px;
+        gap: 15px; /* 缩小图标之间的间距 */
+    }
+
+    .right-nav a {
+        font-size: 25px; /* 图标大小适配手机屏幕 */
+    }
+}
+
+/* 小屏设备（如小手机）响应式调整 */
+@media (max-width: 480px) {
+    /* 进一步调整右侧导航栏 */
+    .right-nav {
+        top: 5px; /* 调整位置 */
+        right: 5px;
+    }
+
+    .right-nav a {
+        font-size: 22px; /* 更小的图标适配超小屏 */
+    }
+}
