@@ -1,91 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小小格温生活分享</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- 导航栏样式 -->
-    <link rel="stylesheet" href="./navigationPart.css">
-    <!-- 生活分享页面样式 -->
-    <link rel="stylesheet" href="lifeShare.css">
-</head>
-<body>
-    <!-- 加载动画 -->
-    <div id="loading">
-        <div class="spinner"></div>
-    </div>
-    
-    <!-- 左侧导航栏 -->
-    <nav class="navigation-bar">
-        <ul>
-            <li><a href="index.html">主页</a></li>
-            <li><a href="life-share.html">生活分享</a></li>
-            <li><a href="study-blog.html">学习博客</a></li>
-        </ul>
-    </nav>
+/* 设置背景图并让它随着页面滚动延伸 */
+.life-share-background {
+    background-image: url("./image/lifeShareBackground.jpg");  
+    background-size: cover;  
+    background-position: center;  
+    background-attachment: fixed;  
+    width: 100%;
+    height: 100vh;  
+    position: relative;
+}
 
-    <!-- 右侧头像 -->
-    <div class="right-nav">
-        <a href="https://space.bilibili.com/358565398?spm_id_from=333.1007.0.0" target="_blank">
-            <i class="fab fa-bilibili"></i> <!-- B站 图标 -->
-        </a>
-        <a href="https://github.com/AnonTokyo-522" target="_blank">
-            <i class="fab fa-github"></i> <!-- GitHub 图标 -->
-        </a>
-        <a href="https://leetcode.cn/u/quirky-villanivbb/" target="_blank">
-            <i class="fas fa-code"></i> <!-- LeetCode 图标 -->
-        </a>
-        <img src="./image/GwenProfile.png" alt="头像" class="avater">
-    </div>
-    
-    <div class="nav-background">
-        <img src="./image/navBackground.webp" alt="导航栏背景">
-    </div>
+.share-container {
+    position: absolute; 
+    top: 10%; 
+    left: 0;
+    z-index: 1;  
+    padding: 20px;
+    text-align: center;
+}
 
-    <!-- 具有控制背景的 moveNav -->
-    <div id="moveNav" class="moveNav">
-    </div>
+/* 生活分享卡片容器，保持卡片对齐 */
+.share-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    gap: 100px;
+    padding: 20px;
+}
 
+/* 生活分享卡片 */
+.share-card {
+    width: 300px;  
+    height: 300px;
+    padding: 20px;
+    background-color: white;  
+    border-radius: 10px;
+    transition: transform 0.3 ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
 
-    <!-- 背景部分，填满页面 -->
-    <div class="life-share-background"></div>
+/* 卡片上方的图片 */
+.card-image {
+    width: 100%;
+    height: 200px;  
+    overflow: hidden;
+    border-radius: 10px;
+}
 
-   <!-- 生活分享卡片部分 -->
-    <section class="share-container">
-        <div class="share-card-container">
-            <div class="share-card">
-                <div class="card-image">
-                    <img src="./LifeShare/LifeShare1.jpg" alt="Card Image">  
-                </div>
-                <p class="card-date">2025年2月3日</p>  
-                <h3 class="card-title">泉州市区之旅</h3>  
-                <a href="./LifeShare/GoQuanZhou.html" class="read-more">阅读更多</a>  
-            </div>
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 保证图片保持比例且填充区域 */
+}
 
-            <div class="share-card">
-                <div class="card-image">
-                    <img src="./LifeShare/LIfeShare2.jpg" alt="Card Image">
-                </div>
-                <p class="card-date">2025年3月2日</p>  
-                <h3 class="card-title">大二下开学回顾</h3>
-                <a href="./LifeShare/NewExam.html" class="read-more">阅读更多</a>  
-            </div>
+/* 小标题样式 */
+.card-title {
+    font-size: 1.25rem;
+    margin: 10px 0;
+    color: #333;
+}
 
-            <div class="share-card">
-                <div class="card-image">
-                    <img src="./LifeShare/Fulilian.png" alt="Card Image">
-                </div>
-                <p class="card-date">2025年3月15日</p>  
-                <h3 class="card-title">葬送的芙莉莲</h3>
-                <a href="./LifeShare/Fulilian.html" class="read-more">阅读更多</a>  
-            </div>
+/* 卡片悬停效果 */
+.share-card:hover {
+    transform: translateY(-10px);  /* 悬停时的浮动效果 */
+}
 
-        </div>
-    </section>
+/* 卡片文本和按钮 */
+.share-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
 
+.read-more {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
 
-    <script src="navigationJS.js"></script>
-    
-</body>
-</html>
+.read-more:hover {
+    color: #1abc9c;
+}
