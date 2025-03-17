@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>葬送的芙莉莲</title>
+    <!-- 导航栏样式 -->
+    <link rel="stylesheet" href="../navigationPart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Share.css">
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- 左侧导航栏 -->
+    <nav class="navigation-bar">
+        <ul>
+            <li><a href="../index.html">主页</a></li>
+            <li><a href="../life-share.html">生活分享</a></li>
+            <li><a href="../study-blog.html">学习博客</a></li>
+        </ul>
+    </nav>
+
+    <!-- 右侧头像 -->
+    <div class="right-nav">
+        <a href="https://space.bilibili.com/358565398?spm_id_from=333.1007.0.0" target="_blank">
+            <i class="fab fa-bilibili"></i> <!-- B站 图标 -->
+        </a>
+        <a href="https://github.com/AnonTokyo-522" target="_blank">
+            <i class="fab fa-github"></i> <!-- GitHub 图标 -->
+        </a>
+        <a href="https://leetcode.cn/u/quirky-villanivbb/" target="_blank">
+            <i class="fas fa-code"></i> <!-- LeetCode 图标 -->
+        </a>
+        <img src="../image/GwenProfile.png" alt="头像" class="avater">
+    </div>
+    
+    <div class="nav-background">
+        <img src="../image/navBackground.webp" alt="导航栏背景">
+    </div>
+
+    <!-- 具有控制背景的 moveNav -->
+    <div id="moveNav" class="moveNav">
+    </div>
+
+    <!-- 背景大图 -->
+    <div class="life-share-background"></div>
+
+    <!-- 生活分享详细内容 -->
+    <section class="share-detail-container">
+        <div class="article-content">
+            <h1 class="article-title"></h1>
+            <p class="article-date">2025年3月2日</p>
+
+            <div class="article-body">
+                <h2>主题</h2>
+                <p>《葬送的芙莉莲》在“寿命论”这一已经被反复讨论的题材上，展现了独特的视角和内涵。作品通过优良的剧情、细腻的人物刻画和情感描写，突破了寿命论的陈词滥调，成为了一部颇具深度和感染力的神作。</p>
+                <p>首先，作品呼吁我们关注生活中的点点滴滴，强调过程重于结果。在现实生活中，我们常常陷入追求目标的焦虑——从小学到中学，再到高考、大学、甚至毕业后的各种竞争与内卷中迷失自我。作品中，通过两组截然不同的角色群体——一边是追求强大魔法与权力的精灵老祖赛丽艾派，另一边则是追求过程、重视细节的芙莉莲及其师徒，巧妙地映射了我们现实生活中忽略心灵培养、迷失自我方向的现象。通过这种对比，作品不仅仅在讲述一个魔法世界的故事，更让我们反思在生活奔波中，如何守住内心的平静与热爱。</p>
+                <p>在细节上，诸如“花田盛开”、“雕像清洁”、“葡萄变酸”等看似平凡的魔法，其实暗示着一种生活的艺术：即便没有惊天动地的成就，日常的温馨与坚持同样能带来长久的幸福。这种观念无疑具有强烈的现实共鸣，鼓励我们在纷繁复杂的生活中，发现并珍惜那些平淡而真实的美好瞬间。</p>
+                <h2>主线</h2>
+                <p>作品的情感主线同样扣人心弦。勇者辛美尔短暂而闪亮的生命对芙莉莲产生了深远的影响，这段情感不仅改变了她原本平淡如水的人生轨迹，更让她重新找到了对生活和魔法意义的思考。芙莉莲和勇者相识这个节点的前后半生，形成鲜明对比。当有人问起芙莉莲为什么搜集魔法时，她会答出“因为曾经有个笨蛋说我搜集的魔法很有趣”。过去芙莉莲对时间毫不在意，也对同行伙伴的时间毫不关心，而现在她会为身边的人类考虑时间：“如果要花费很久时间的话 菲伦会不高兴的。”</p>
+                <p>尤其在勇者离去时，芙莉莲的眼泪和内心的悔恨，不仅是对逝去时光的挽留，也是对生活本质的深刻省思。这段情节提醒我们，每一段相遇、每一次触动，都可能成为我们生活中的转折点。正如那句“如果是勇者辛美尔的话，他会这么做的”，正是这种无声的感召，使得芙莉莲决定踏上重新认识人类、思考生活意义的旅途。</p>
+                <p>在作品中有一句意味深长的话，勇者曾说：“在这短暂的一生里，真正的追求是让别人记住你，只需你轻轻地改变对方的人生。”这句话深刻地揭示了这样一个道理：当世界上无人记得你时，你的存在也会悄然从这个世界中消逝。而勇者给出的答案正是——与他人建立深刻的联系。</p>
+                <h2>人物 剧情</h2>
+                <p>菲伦：最初对芙莉莲及其周遭人物产生的偏见，在逐步深入剧情后得到了改观。菲伦从一个对生活细节漠不关心的女孩，逐渐成长为既聪明又乐于助人的形象。她的成长不仅体现在个人行为上，也体现在与周围人际关系的逐步改善上。菲伦的可爱和认真，无论是在生气时的俏皮，还是战斗时的专注，都为整个故事增添了不少温情与趣味。 </p>
+                <p>其他角色，如番茄、赞恩以及旅途中遇到的城主、冰水姐妹、邓肯等，每个角色都各具特色。制作团队在设计角色时，没有刻意制造低智或令人反感的情节，而是通过一个个生动的小故事和偶然的CP感，让观众在欣赏主线情感的同时，也能感受到配角们所传递出的温暖与人性光辉。</p>
+                <h2>制作</h2>
+                <ul>
+                    <li><p>画风与视觉效果：虽然在观望时，我对番剧的画风并无好感，但随着剧情深入，我会发现这种画风正好契合了故事的情感基调，平淡中见细腻，简洁中透出层次感。</p></li>
+                    <li><p>音乐与剪辑：音乐恰到好处地烘托出情节的氛围，既有紧张激烈的战斗场面，也有温馨柔美的回忆时刻。剪辑上张弛有度，使得整个剧情在快节奏与慢叙之间取得了完美平衡，充分展示了制作团队的实力和用心。</p></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 右侧图片卡片 -->
+        <div class="image-gallery">
+            <div class="image-card">
+                <img src="./Fulilian.png" alt="图片1">
+            </div>
+            <div class="image-card">
+                <img src="./Fulilian2.png" alt="图片2">
+            </div>
+            <div class="image-card">
+                <img src="./Fulilian3.png" alt="图片3">
+            </div>
+            <div class="image-card">
+                <img src="./Fulilian4.png" alt="图片3">
+            </div>
+            <div class="image-card">
+                <img src="./Fulilian5.png" alt="图片3">
+            </div>
+        </div>
+    </section>
+
+    <script src="../navigationJS.js"></script>
+    
+</body>
+</html>
